@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Burger Details</h1>
+
+<div class="card">
+  <div class="card-content">
+    <span class="card-title">{{ burger.name }}</span>
+    <p>Origin: {{ burger.origin }}</p>
+    <p>Description: {{ burger.description }}</p>
+    {% if burger.quality > 0 %}
+      <p>Quality: {{ burger.quality }}</p>
+    {% else %}
+      <p>Qauality: 0</p>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

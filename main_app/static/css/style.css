@@ -4,28 +4,39 @@ body {
     min-height: 100vh;
     flex-direction: column;
     color: #fff;
+    margin-bottom: 100px;
+
   }
 
   .nav-wrapper {
       background: #d36607;
   }
+
+  .side-nav {
+    background: #d36607;
+  }
   
   main {
     flex: 1 0 auto;
+  }
+
+  .card-content {
+      color: #000;
   }
   
   .page-footer {
     bottom: 0;
     padding-top: 20px;
     color: #fff;
-    position: absolute !important;
+    position: fixed !important;
     background-color: #d36607;
     width: 100% !important;
     display: flex !important;
     align-content: flex-end;
     height: 65px !important;
+    margin-top: 50px;
   }
 
   .footer-text {
-      right:0;
+      float: right;
   }

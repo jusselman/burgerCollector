@@ -5,8 +5,10 @@
 {% for burger in burgers %}
   <div class="card">
     <div class="card-content">
+        <a href="/burgers/{{ burger.id }}">
       <span class="card-title">{{ burger.name }}</span>
       <p>Name: {{ burger.name }}</p>
+      <p>Origin: {{ burger.origin }}</p>
       <p>Description: {{ burger.description }}</p>
       {% if burger.quality > 0 %}
         <p>Quality: {{ burger.quality }}</p>
@@ -14,7 +16,8 @@
         <p>Quality: 0</p>
       {% endif %}
     </div>
+  </a>
   </div>
-{% endfor %}
 
+{% endfor %}
 {% endblock %}
