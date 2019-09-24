@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Burger(models.Model):
@@ -7,12 +8,9 @@ class Burger(models.Model):
     description = models.TextField(max_length=100)
     quality = models.IntegerField()
     
+def __str__(self):
+    return self.name
 
+def get_absolute_url(self):
+    return reverse('detail', kwargs={'burger_id': self.id})
 
-
-# class Photo(models.Model):
-#     url = models.CharField(max_length=200)
-#     burger = models.ForeignKey(Burger, on_delete=models.CASCADE)
-
-#     def __str__(self):
-#         return f"Photo for burger_id: {self.burger_id} @{self.url}"

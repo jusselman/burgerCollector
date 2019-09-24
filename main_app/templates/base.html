@@ -1,56 +1,76 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Burger Flipper</title>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Burger Flipper</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/style.css' %}"
+    />
 
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"
+    ></script>
+  </head>
+  <body>
+    <header class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <ul>
+            <li>
+              <a href="/" class="left brand-logo"
+                >&nbsp;&nbsp;BurgerCollector</a
+              >
+            </li>
+          </ul>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{% url 'about'  %}">About</a></li>
+            <li><a href="{% url 'burgers_create' %}">Add A Burger</a></li>
 
-</head>
-<body>
-  <header class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;BurgerCollector</a></li>
-        </ul>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="/about">About</a></li>
-          <li><a href="/burgers">Hungry?</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+            <li><a href="/burgers">Hungry?</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
 
-  <main class="container">
-    <h1>Burger Collector</h1>
-    {% block content %}
-    {% endblock %}
-  </main>
+    <main class="container">
+      <h1>Burger Collector</h1>
+      {% block content %} {% endblock %}
+    </main>
 
-  
-  <footer class="page-footer">All Fries Preserved, &copy; 2019 McWhopper LLC</footer>
+    <footer class="page-footer">
+      All Fries Preserved, &copy; 2019 McWhopper LLC
+    </footer>
 
-  <ul class="sidenav" id="mobile-demo">
+    <ul class="sidenav" id="mobile-demo">
       <li><a href="/about">About</a></li>
       <li><a href="/burgers">Hungry?</a></li>
-  </ul>
+    </ul>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.sidenav');
-      var options = {
-        edge: 'right'
-      }
-      var instances = M.Sidenav.init(elems, options);
-    });
-  </script>
-</body>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var elems = document.querySelectorAll(".sidenav");
+        var options = {
+          edge: "right"
+        };
+        var instances = M.Sidenav.init(elems, options);
+      });
+    </script>
+  </body>
 </html>

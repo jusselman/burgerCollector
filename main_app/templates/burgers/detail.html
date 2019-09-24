@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <h1>Burger Details</h1>
 
@@ -9,10 +8,14 @@
     <p>Origin: {{ burger.origin }}</p>
     <p>Description: {{ burger.description }}</p>
     {% if burger.quality > 0 %}
-      <p>Quality: {{ burger.quality }}</p>
+    <p>Quality: {{ burger.quality }}</p>
     {% else %}
-      <p>Qauality: 0</p>
+    <p>Qauality: 0</p>
     {% endif %}
+  </div>
+  <div class="card-action">
+    <a href="{% url 'burgers_update' burger.id %}">Edit</a>
+    <a href="{% url 'burgers_delete' burger.id %}">Delete</a>
   </div>
 </div>
 
